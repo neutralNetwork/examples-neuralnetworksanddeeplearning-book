@@ -33,3 +33,17 @@ var adder = function (inputOne, inputTwo) {
 	'carry': carryBit
 	};
 };
+
+var sigmoid = function (val) {
+    return 1 / (1 + Math.pow(Math.E, -val));
+};
+
+
+var signoidPerceptron = function (inputs, weights, bias) {
+    var sum = 0;
+    var len = inputs.length;
+    for (var i = 0; i < len; i++) {
+	sum += inputs[i] * weights[i];
+    }
+    return sigmoid(sum + 1);
+};
